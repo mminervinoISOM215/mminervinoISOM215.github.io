@@ -1,0 +1,109 @@
+
+ <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % 
+  % Author:  <Micael Minervino>
+  % Date:    <10/07/2020>
+  % Course:  ISOM215A Fall 2020
+  % Site:    https://https://mminervinoisom215.github.io/emailfeedback.html
+  % Description: Site Feedback page
+  % 
+  % Page Name: emailfeedback.html
+  % Page Summary & Features: 
+  %      - Allow site visitors to email site owner (you) with questions and comments  
+  %               
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Include SMTPJS 3rd Party Code -->
+<title>Give Us Your Feedback</title>
+<script src="https://smtpjs.com/v3/smtp.js"></script>  
+
+<!-- META TAGE -->
+<meta charset="utf-8">
+<meta name="author" content="Michael Minervino">
+<meta name="description" content="ISOM215 Feedback">
+<meta name="keywords" content="Feedback Rating">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                     Cascading Style Sheets (CSS) Styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+<style>
+label{
+ margin-left: 10px;
+ font-size:22px;
+}
+h2 {
+  text-align: center;  
+}
+
+</style>
+
+<script type="text/javascript">
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                            ValidateEmail()
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function ValidateEmail() 
+{
+var email_to_send_to = document.getElementById("email_address").value;
+//console.log("in ValidateEmail...");
+
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_to_send_to))
+  {
+    return (true)
+  }
+    alert("Invalid email address entered.")
+    return (false)
+}
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                            sendEmail()
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function sendEmail() {
+		
+var email_to_send_to = document.getElementById("email_address").value;
+
+// Check email address entered and make sure valid	
+if (ValidateEmail())
+  {
+    //console.log("in sendEmail...");
+  
+    Email.send({
+    SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
+    To : "mminervino@su.suffolk.edu",  
+    From : "DoNotReply@gmail.com",
+    Cc : email_to_send_to,
+    Subject : "Feedback Received",
+    Body : "<h2 style=color:#228B22>We got your feedback!</h2><hr>"+
+	"Name: "+
+	document.getElementById("submitter_name").value+
+	"<br>Contact Notes: "+document.getElementById("mytextarea").value+"<br>"+
+	"<hr>"
+   })
+  .then(function(message){alert("Email successfully sent.")});
+  }}
+</script>
+
+</head>
+<body style="background-color:#7ed6df">
+<h2>Send us your feedback.</h2>
+  <form method="post">
+  <label>Name:</label><br>
+  <input id="submitter_name" type="text" size="45"><br>
+   <br> <label>Email Address: </label><br>
+  <input id="email_address" type="email" required size="45"><br>
+    <br>  <label>Contact Notes: </label><br>
+  <textarea id="mytextarea"  name="notes" rows = "3" cols ="100" maxlength="300">
+How can we do better?
+</textarea>
+<br>  
+  <p><input style="margin-left: 114px" type="button" src="email3.png" value="Send Email" onclick="sendEmail('foo')"/></p>
+<br /> 
+ </form>
+<div style="text-align:center" > Site Created by Michael Minervino</div>
+</body>
+</html>
