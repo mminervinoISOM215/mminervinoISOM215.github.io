@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>InnerHTML Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<h2 id="top">InnerHTML Example</h2>
+<p id=pid1>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis molestie velit. Sed vehicula ut risus sagittis commodo. Proin semper iaculis dolor, nec efficitur augue molestie vitae. Maecenas sit amet ultrices lectus, vitae aliquam libero. Aliquam nulla urna, dapibus sed convallis eget, ornare vitae nibh. Suspendisse elementum sollicitudin mollis. Etiam finibus luctus posuere. Donec et diam justo. Maecenas dapibus, mauris id volutpat porttitor, libero magna mattis turpis, eu sodales nisl lectus vel lorem. Fusce pellentesque lectus a velit elementum dignissim. Nulla facilisi. 
+</p>
+<p id=pid2>
+Sed rhoncus quam sit amet orci vehicula, vel elementum sem fermentum. Aliquam eget odio varius, dictum est sed, tincidunt nisl. Cras tortor mauris, pretium id mauris nec, elementum pharetra quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id cursus est. Aenean viverra, dolor eu ultrices commodo, orci tellus varius mauris, at fringilla nulla leo eget libero. Phasellus at leo id turpis vehicula pulvinar. Nulla sed ante lobortis, bibendum sapien a, sodales enim. Nulla laoreet nunc vel erat venenatis, in sodales odio vestibulum. Aenean viverra maximus mollis. Suspendisse eget molestie arcu. Nullam dignissim blandit massa, vel aliquam arcu. Sed id tortor a nulla sollicitudin tincidunt. 
+</p>
+
+
+<a onclick="changepid1();" href="#top">Change Paragraph #1</a>
+
+<script type="text/javascript">
+
+function changepid1() 
+
+{ 
+// DEBUG Statement
+//alert("foobar");
+
+//
+// Change the text of the first paragraph...
+//
+document.getElementById("pid1").innerHTML="She had been told time and time again that the most important steps were the first and the last. It was something that she carried within her in everything she did, but then he showed up and disrupted everything. He told her that she had it wrong. The first step wasn't the most important. The last step wasn't the most important. It was the next step that was the most important. She counted. One. She could hear the steps coming closer. Two. Puffs of breath could be seen coming from his mouth. Three. He stopped beside her. Four. She pulled the trigger of the gun";
+
+// Example of changing a paragraphs color using a <span> tag
+	var oldHTML = document.getElementById('pid1').innerHTML;
+	var newHTML = "<span style='color:#336699'>" + oldHTML + "</span>";
+	document.getElementById('pid1').innerHTML = newHTML;                             
+}
+
+</script>
+</body>
+</html>
