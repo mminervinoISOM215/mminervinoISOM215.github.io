@@ -90,27 +90,21 @@ if (ValidateEmail())
 </script>
 </head>
 
+<body style="background-color:#DAF7A6 ">
+<h2>Send us your feedback.</h2>
+  <form method="post">
+  <label>Class:</label><br>
+  <input id="submitter_name" type="text" size="45"><br>
+   <br> <label>Email Address: </label><br>
+  <input id="email_address" type="email" required size="45"><br>
+    <br>  <label>Contact Notes: </label><br>
+  <textarea id="mytextarea"  name="notes" rows = "3" cols ="100" maxlength="300">
+How can we do better?
+</textarea>  
+  <p><input type="button" src="email3.png" value="Send Email" onclick="sendEmail('foo')"/></p>
+ </form>
 
- <h2>Contact Form</h2>
 
- <div class="container">
-   <form method="post">
-     <label for="fname">First Name</label>
-     <input type="text" id="fname" name="firstname" placeholder="Your name..">
- 
-     <label for="lname">Last Name</label>
-     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
- 
-     <label for="email">Email</label>
-      <input type="text" id="email" name="email_address" placeholder="Your Email..">
-     </select>
- 
-     <label for="subject">Subject</label>
-     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-     <p><input type="button" src="email3.png" value="Send Email" onclick="sendEmail('foo')"/></p>
-     
-   </form>
- </div>
 
 
 
