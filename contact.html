@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-
-<!-- META TAGE -->
-<html lang="en"></html>
-<meta charset="utf-8">
-<meta name="author" content="Michael Minervino">
-<meta name="description" content="ISOM215 Lab">
-<meta name="keywords" content="Contact Sheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 <head>
-
-  <link rel="stylesheet" href="style.css">
-  <title>Contact | Lighthouse Bistro</title>
+<link rel="stylesheet" href="style.css">
+<title>Contact | Lighthouse Bistro</title>
+<meta charset="utf-8">
 </head>
-
 <body>
     <div id="container">
     <header>
@@ -26,7 +18,32 @@
    </ul>
 
 <!-- Include SMTPJS 3rd Party Code -->
+<title>Give Us Your Feedback</title>
 <script src="https://smtpjs.com/v3/smtp.js"></script>  
+
+<!-- META TAGE -->
+<meta charset="utf-8">
+<meta name="author" content="Michael Minervino">
+<meta name="description" content="ISOM215 Feedback">
+<meta name="keywords" content="Feedback Rating">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                     Cascading Style Sheets (CSS) Styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+<style>
+label{
+ margin-left: 10px;
+ font-size:22px;
+}
+h2 {
+  text-align: center;  
+}
+
+</style>
+
 <script type="text/javascript">
   //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                               ValidateEmail()
@@ -62,10 +79,10 @@
       From : "DoNotReply@gmail.com",
       Cc : email_to_send_to,
       Subject : "Feedback Received",
-      Body : "<h2 style=color:#228B22>We got your feedback!</h2><hr>"+
+      Body : "<h2 style=color:#9DB3DC>We got your feedback!</h2><hr>"+
     "Name: "+
     document.getElementById("submitter_name").value+
-    "Subject"+document.getElementById("mytextarea").value+"<br>"+
+    "<br>Subject:"+document.getElementById("mytextarea").value+"<br>"+
     "<hr>"
      })
     .then(function(message){alert("Email successfully sent.")});
