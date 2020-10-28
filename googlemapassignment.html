@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <script>
+        function setIframeSrc(id, url) {
+            document.getElementById("myframe").src = url;
+
+            document.getElementByName("myframe").src = "http://www.boston.com";
+            document.getElementById("myframe").src = "https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=40.4167047 ,-3.7035825&amp;q=Calle%20de%20la%20Vi%C3%B1a%2C%203%20%20E-28003%20Madrid%2C%20Spain+(Suffolk%20University%20Madrid%20)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed";
+
+        }
+    </script>
+    <title>Google Maps Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Style the header */
+        
+        header {
+            background-color: #999999;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+        /* Container for flexboxes */
+        
+        section {
+            display: -webkit-flex;
+            display: flex;
+        }
+        /* Style the content */
+        
+        article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 3;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        /* Style the footer */
+        
+        footer {
+            background-color: #777;
+            padding: 5px;
+            text-align: center;
+            color: white;
+        }
+        /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+        
+        @media (max-width: 600px) {
+            section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<!-- 
+=====
+== BODY
+=====
+-->
+
+<body>
+    <form>
+
+        <header>
+            <h2 id="top">Suffolk University Campuses</h2>
+        </header>
+        <nav class="w3-sidebar w3-bar-block w3-light-grey" style="width:180px">
+
+            <!-- Boston Campus -->
+            <a onclick="changearticle1();" href="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=8%20Ashburton%20Place%2C%20Boston%2C%20MA+(Suffolk%20University)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed" target="myframe">Boston</a>
+
+            <!-- Madrid Campus -->
+            <a onclick="changearticle2();" href="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=40.4167047 ,-3.7035825&amp;q=Calle%20de%20la%20Vi%C3%B1a%2C%203%20%20E-28003%20Madrid%2C%20Spain+(Suffolk%20University%20Madrid%20)&amp;ie=UTF8&amp;t=&amp;z=12&amp;iwloc=B&amp;output=embed"
+                target="myframe">Madrid</a>
+
+        </nav>
+        <section>
+
+            <article id=article1>
+                <p>Suffolk University's Boston campus is located in the heart of Boston, Massachusetts.</p>
+                <p>Located on historic Beacon Hill, the campus blends in with the surrounding downtown area. The Sawyer School of Business ISOM department is particulary good.</p>
+            </article>
+
+            <script type="text/javascript">
+                function changearticle1() {
+
+                    document.getElementById("article1").innerHTML = "<p>Suffolk University's Boston campus is located in the heart of Boston, Massachusetts. " + "</p>" + "<p>Located on historic Beacon Hill, the campus blends in with the surrounding downtown area. The Sawyer School of Business ISOM department is particulary good." + "</p>"
+
+                    var oldHTML = document.getElementById('article1').innerHTML;
+                    var newHTML = "<span style='color:black'>" + oldHTML + "</span>";
+                    document.getElementById('article1').innerHTML = newHTML;
+                }
+
+
+                function changearticle2() {
+
+                    document.getElementById("article1").innerHTML = "<p> Located in the Capital City of Spain is the home of another one of our campuses" + "</p>" + "<p>With the Study Abroad Program you and your freinds can experience the culture of Spain while still being apart of the Suffolk Family. The campus is beautiful and highly recommended by all students." + "</p>"
+
+                    var oldHTML = document.getElementById('article1').innerHTML;
+                    var newHTML = "<span style='color:black'>" + oldHTML + "</span>";
+                    document.getElementById('article1').innerHTML = newHTML;
+                }
+
+    
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(40.400109900000004, -71.061772),
+                        zoom: 14,
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+            </script>
+            <!--  Boston -->
+            <div style="width: 100%"><iframe name="myframe" width="100%" height="100%" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=8%20Ashburton%20Place%2C%20Boston%2C%20MA+(Suffolk%20University)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+</iframe></div><br/>
+
+        </section>
+        <footer>
+
+            <p>&copy; mminervinoisom215.github.io</p>
+        </footer>
+
+      </body>
+</html>
