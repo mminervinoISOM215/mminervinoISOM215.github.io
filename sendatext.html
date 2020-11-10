@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Send a Text | HTML Phone</title>
+<title>Send a Text | HTML Phone</title>
 
 <style type="text/css">
 
 	  body {background-color: #0da9e7;
         background-image: url('boston.jpg');
-		    background-repeat: no-repeat;
-		    background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
         background-size: cover;
 	  }
 	  
@@ -29,25 +28,35 @@
          padding: 3px;
       }
 
-    </style>
+</style>
 </head>
 
 <body>
   <h1>Send a Text</h1>
+
   <form action="http://www.isom.biz/text/sms6.php" method="post">
-  <fieldset>
+
+<fieldset>
+
     <label for="TextNumber">Enter Phone Number: </label>
+
     <input required type="tel" id="TextNumber" name="TextNumber" 
-	maxlength="12" placeholder="8002529024" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/>
-	<br><br>
+  maxlength="12" placeholder="8002529024" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/>
+  
+  <br><br>
+  
   <small>Format: 6176261000</small>
+  
   <br>
+
   <br> <label>Enter Text Message:</label><br>
+
   <textarea name="mymessage" id="mymessage" maxlength="300" placeholder="Enter your message here" cols="75" rows="3" required></textarea>
-  </fieldset>
+  
+</fieldset>
   
   <p><input type="submit" value="Send Text" /></p>
   
-  </form>
+</form>
 </body>
 </html>
