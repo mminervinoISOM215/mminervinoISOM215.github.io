@@ -1,96 +1,173 @@
 <!DOCTYPE html>
-<!-- META TAGE -->
 <html lang="en">
-<meta charset="utf-8">
-<meta name="author" content="Michael Minervino">
-<meta name="description" content="ISOM215 Fix the Demo">
-<meta name="keywords" content="Demo">
+<head>
+
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % 
+  % Author:  <Micael Minervino>
+  % Date:    <12/15/2020>
+  % Course:  ISOM215A Fall 2020
+  % Site:    https://https://mminervinoisom215.github.io/index.html
+  % Description: Final Website Project
+  % 
+  % Page Name: index.html             
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="style.css">
+  <title>Contact Us | McCarthy's Cafe</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Michael Minervino Jr">
+  <meta name="description" content="Final Website Project">
+  <meta name="keywords" content="Project">
 
-<head>
-<title>Contact | Lighthouse Bistro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="javascript" href="javascript.js">
 </head>
 
 <body>
-    <div id="container">
-    <header>
-    <h1>Contact</h1>
-    </header>
-    <ul>
-     <li><a href="index.html">Home</a></li>
-     <li><a href="menu.html">Menu</a></li>
-     <li><a href="directions.html">Directions</a></li>
-     <li><a class="active" href="contact.html">Contact Us</a></li>
-   </ul>
 
-<!-- Include SMTPJS 3rd Party Code -->
-<title>Give Us Your Feedback</title>
-<script src="https://smtpjs.com/v3/smtp.js"></script>  
+<!-- Menu Navigation -->
+<div class="topnav" id="myTopnav">
+  <a href="contact.html">Contact</a>	
+  <a href="directions.html">Directions</a>
+	<a href="shop.html">Shop</a>
+	<a href="menu.html">Menu</a>
+  <div class="dropdown">
+	  <button class="dropbtn">About Us<i class="fa fa-caret-down"></i>
+	  </button>
+	  <div class="dropdown-content">
+        <a href="history.html">History</a>
+        <a href="management.html">Management</a>
+	  </div>
+	</div>
+  
+	<a href="index.html"class="active">Home</a>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<!-- End Navigation -->
 
-
-<script type="text/javascript">
-  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                              ValidateEmail()
-  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  function ValidateEmail() 
-  {
-  var email_to_send_to = document.getElementById("email_address").value;
-  //console.log("in ValidateEmail...");
-  
-   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_to_send_to))
-    {
-      return (true)
-    }
-      alert("Invalid email address entered.")
-      return (false)
-  }
-  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                              sendEmail()
-  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  function sendEmail() {
-      
-  var email_to_send_to = document.getElementById("email_address").value;
-  
-  // Check email address entered and make sure valid	
-  if (ValidateEmail())
-    {
-      //console.log("in sendEmail...");
+<br><br><br>
     
-      Email.send({
-      SecureToken : "98bca931-c2ae-45da-8b0b-a1c0569a8591",
-      To : "mminervino@su.suffolk.edu",  
-      From : "DoNotReply@gmail.com",
-      Cc : email_to_send_to,
-      Subject : "Feedback Received",
-      Body : "<h2 style=color:#9DB3DC>We got your feedback!</h2><hr>"+
-    "Name: "+
-    document.getElementById("submitter_name").value+
-    "<br>Subject:"+document.getElementById("mytextarea").value+"<br>"+
-    "<hr>"
-     })
-    .then(function(message){alert("Email successfully sent.")});
-    }}
+
+<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Dec 09, 2020 16:30:00").getTime();
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+  
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+  
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
   </script>
-</head>
 
-<h3>Contact Form</h3>
-   <div class="container">
-    <form method="post">
-    <label for="fname">Name</label>
-    <input type="text" id="submitter_name" name="name" placeholder="Your name..">
+<img src="/soon.jpg" width="400" height="400" class="center" alt="Coming Soon">
+  
+  <br><br><br>
 
-    <label for="lname">Email</label>
-    <input type="text" id="email_address" name="email" placeholder="Your Email..">
+<div class="footer" class="center"> Site Created by Michael Minervino <a href="mailto:TTreadway@suffolk.edu?Subject=ADPR297%20Site%20Feedback" target="_top">mminervino@su.suffolk.edu</a> 
 
-    <label for="subject">Subject</label>
-    <textarea id="mytextarea" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="button" src="email3.png" value="Send Email" onclick="sendEmail('foo')"/>
-  </form>
-</div>
-</div>
-    </body>
-    </html>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
