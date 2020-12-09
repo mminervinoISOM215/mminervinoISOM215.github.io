@@ -532,7 +532,7 @@ body, html {
 
 .bg2 {
   /* The image used */
-  background-image: url("/Users/michaelminervino/Desktop/headers/shop.jpg");
+  background-image: url("shop.jpg");
 
   /* Full height */
   height: 40%; 
