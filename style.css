@@ -532,7 +532,7 @@ body, html {
 
 .bg2 {
   /* The image used */
-  background-image: url("/shop.jpg");
+  background-image: url("/Users/michaelminervino/Desktop/headers/shop.jpg");
 
   /* Full height */
   height: 40%; 
@@ -545,7 +545,7 @@ body, html {
 
 .bg3 {
   /* The image used */
-  background-image: url("/directions.jpg");
+  background-image: url("directions.jpg");
 
   /* Full height */
   height: 40%; 
@@ -558,7 +558,7 @@ body, html {
 
 .bg4 {
   /* The image used */
-  background-image: url("/contact.jpg");
+  background-image: url("contact.jpg");
 
   /* Full height */
   height: 40%; 
@@ -586,3 +586,4 @@ body, html {
 #aboutdivs {
 float:left;
 }
+
